@@ -1,0 +1,21 @@
+{
+  "name": "devburguer-backend",
+  "version": "1.0.0",
+  "description": "Construção de API",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "author": {
+    "name": "Alex Prado",
+    "url": "https://github.com/AlexKSP"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "sucrase": "^3.35.0"
+  }
+}
