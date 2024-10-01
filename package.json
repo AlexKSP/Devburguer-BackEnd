@@ -4,7 +4,8 @@
   "description": "Construção de API",
   "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "migrate": "npx sequelize-cli db:migrate"
   },
   "author": {
     "name": "Alex Prado",
