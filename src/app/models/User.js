@@ -1,5 +1,6 @@
 import Sequelize from "sequelize";
 import { Model } from "sequelize";
+import bcrypt from 'bcrypt';
 
 //Conceito de herança, acessando os metódos da classe pai.
 class User extends Model {
@@ -8,6 +9,7 @@ class User extends Model {
       {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
+        password: Sequelize.VIRTUAL,
         password_hash: Sequelize.STRING,
         admin: Sequelize.BOOLEAN,
       },
@@ -16,6 +18,14 @@ class User extends Model {
         tableName: 'users',
       },
     );
+
+    this.addHook('beforeSave', async (user) => {
+      if(user.password) {
+        user.password_hash = await bcrypt.hash(user.password, 8)
+      }
+    });
+
+    return this;
   }
 }
 
