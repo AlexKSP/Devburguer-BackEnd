@@ -1,4 +1,5 @@
-import Sequelize, { Model } from "sequelize";
+import Sequelize from "sequelize";
+import { Model } from "sequelize";
 
 //Conceito de herança, acessando os metódos da classe pai.
 class User extends Model {
@@ -12,9 +13,10 @@ class User extends Model {
       },
       {
         sequelize,
-      }
+        tableName: 'users',
+      },
     );
   }
 }
 
-export default User
+export default User;

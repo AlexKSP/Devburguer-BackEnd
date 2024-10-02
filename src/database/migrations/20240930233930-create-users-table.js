@@ -6,7 +6,6 @@ const { STRING } = require("sequelize");
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("users", {
-      id: Sequelize.INTEGER,
       id: {
         primaryKey: true,
         allowNull: false,
@@ -30,7 +29,7 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         defaultValue: false,
       },
-      creatrd_at: {
+      created_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
