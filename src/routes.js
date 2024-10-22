@@ -6,6 +6,7 @@ import authMiddleware from './middlewares/auth';
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 import ProductController from './app/controllers/ProductController';
+import CategoryController from './app/controllers/CategoryController';
 
 
 const routes = new Router();
@@ -19,6 +20,9 @@ routes.use(authMiddleware) // todas as rotas abaixo precisa do token para valida
 
 routes.post('/products', upload.single('file'), ProductController.store);
 routes.get('/products', ProductController.index);
+
+routes.post('/categories', CategoryController.store);
+routes.get('/categories', CategoryController.index);
 
 export default routes;
 
