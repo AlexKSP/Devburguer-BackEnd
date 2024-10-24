@@ -7,7 +7,7 @@ class Product extends Model {
             {
                 name: Sequelize.STRING,
                 price: Sequelize.INTEGER,
-                category: Sequelize.STRING,
+                category_id: Sequelize.NUMBER,
                 path: Sequelize.STRING,
                 url: {
                     type: Sequelize.VIRTUAL,
@@ -27,7 +27,7 @@ class Product extends Model {
     static associate(models) {
         this.belongsTo(models.Category, {
             foreignKey: 'category_id',
-            as: 'cateogry',
+            as: 'category',
         });
     }
 }
